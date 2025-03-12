@@ -12,10 +12,10 @@ jobs:
       - name: checkout github
         uses: actions/checkout@v2
       
-      - name: Install kubectl
-        uses: aws-actions/setup-kubectl@v1
+      - name: install kubectl
+        uses: azure/setup-kubectl@v3
         with:
-          version: "1.25.9"
+          version: "v1.25.9"
         id: install
   
       - name: configure aws
