@@ -15,7 +15,7 @@ jobs:
       - name: Install kubectl
         uses: aws-actions/setup-kubectl@v1
         with:
-          version: "1.29.0"
+          version: "1.25.9"
         id: install
   
       - name: configure aws
