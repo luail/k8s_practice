@@ -29,11 +29,11 @@ spec:
             secretKeyRef:
               name: ko-app-secrets
               key: DB_PW
-        - name: REDIS_HOST
-          valueFrom:
-            secretKeyRef:
-              name: ko-app-secrets
-              key: REDIS_HOST
+        # - name: REDIS_HOST
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: ko-app-secrets
+        #       key: REDIS_HOST
         - name: AWS_KEY
           valueFrom:
             secretKeyRef:
