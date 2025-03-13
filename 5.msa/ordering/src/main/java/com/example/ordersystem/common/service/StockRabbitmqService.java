@@ -1,6 +1,5 @@
 package com.example.ordersystem.common.service;
 
-import com.example.ordersystem.common.config.RabbitmqConfig;
 import com.example.ordersystem.common.dtos.StockRabbitDto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
