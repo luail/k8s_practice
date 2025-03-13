@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bradko-msa-ordering
-        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradko-msa-order:latest
+        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradko-msa-ordering:latest
         ports:
         - containerPort: 8080
         env:
