@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bradko-msa-product-depl
+  namespace: bradko
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bradko-msa-product
+  template:
+    metadata:
+      labels:
+        app: bradko-msa-product
+    spec:
+      containers:
+      - name: bradko-msa-product
+        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradkim-msa-product:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: ko-app-secrets
+              key: DB_HOST
+        - name: DB_PW
+          valueFrom:
+            secretKeyRef:
+              name: ko-app-secrets
+              key: DB_PW
+        - name: AWS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: ko-app-secrets
+              key: AWS_KEY
+        - name: AWS_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: ko-app-secrets
+              key: AWS_SECRET
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bradko-msa-product-service
+  namespace: bradko
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: bradko-msa-product
