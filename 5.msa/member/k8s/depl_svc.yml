@@ -4,7 +4,7 @@ metadata:
   name: bradko-msa-member-depl
   namespace: bradko
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: bradko-msa-member
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bradko-msa-member
-        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradkim-msa-member:latest
+        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradko-msa-member:latest
         ports:
         - containerPort: 8080
         env:

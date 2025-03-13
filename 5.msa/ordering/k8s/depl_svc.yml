@@ -4,7 +4,7 @@ metadata:
   name: bradko-msa-ordering-depl
   namespace: bradko
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: bradko-msa-ordering
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bradko-msa-ordering
-        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradkim-msa-order:latest
+        image: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com/bradko-msa-order:latest
         ports:
         - containerPort: 8080
         env:
