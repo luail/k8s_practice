@@ -35,7 +35,7 @@ jobs:
       - name: build and push docker image to ecr
         env:
           REGISTRY: 346903264902.dkr.ecr.ap-northeast-2.amazonaws.com
-          REPOSITORY: brad-order-backend
+          REPOSITORY: bradko-order-backend
           IMAGE_TAG: latest
         run: |
           docker build \
@@ -46,4 +46,4 @@ jobs:
       - name: eks kubectl apply
         run: |
           kubectl apply -f ./4.order_system/k8s/depl_svc.yml
-          kubectl rollout restart deployment ko-order-backend -n bradko-ns
+          kubectl rollout restart deployment ko-order-backend -n bradko
